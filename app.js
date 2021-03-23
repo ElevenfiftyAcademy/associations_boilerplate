@@ -6,9 +6,8 @@ const dbConnection = require('./db');
 const app = express();
 
 app.use(express.json());
-// app.use(headers);
 
-// endpoints
+// endpoints below
 
 try {
     dbConnection
