@@ -5,14 +5,18 @@ const express = require('express');
 const dbConnection = require('./db');
 const controllers  = require('./controllers');
 
-// server instantiation & 
+// instantiation
 const app = express();
+
+// middleware
 app.use(express.json());
 
+// endpoints
 app.use('/auth', controllers.userscontroller);
 app.use('/posts', controllers.postscontroller);
 app.use('/comments', controllers.commentscontroller);
 
+// database auth & sync
 try {
     dbConnection
         .authenticate()
